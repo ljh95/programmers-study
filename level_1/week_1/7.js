@@ -5,7 +5,7 @@ function solution(n) {
   const arr = [1];
   let sqrt = 0;
   for (let i = 2; i <= Math.sqrt(n); i++) {
-    if (n % i === 0 && Math.sqrt(n) === i) {
+    if (Math.sqrt(n) === i) {
       sqrt = i;
       break;
     }
@@ -13,6 +13,7 @@ function solution(n) {
       arr.push(i);
     }
   }
+  console.log(n);
 
   return (
     arr.reduce((acc, cur) => {

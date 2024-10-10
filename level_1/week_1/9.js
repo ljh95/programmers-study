@@ -5,10 +5,8 @@ function solution(n) {
     n = Math.floor(n / 10);
   }
   return arr;
-  return String(n)
-    .split("")
-    .reverse()
-    .map((s) => Number(s));
-  var answer = [];
-  return answer;
+  // return String(n)
+  //   .split("")
+  //   .reverse()
+  //   .map((s) => Number(s));
 }

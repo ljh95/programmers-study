@@ -11,6 +11,4 @@ function solution(n, m) {
     return Math.abs(a * b) / gcd(a, b);
   }
   return [gcd(n, m), lcm(n, m)];
-  var answer = [];
-  return answer;
 }
