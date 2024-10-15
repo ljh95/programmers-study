@@ -1,17 +1,7 @@
 function solution(arr) {
-  let prev = -1;
-
-  return arr.reduce((acc, cur, i) => {
-    if (i == 0) {
-      prev = cur;
-      return [cur];
-    }
-    if (prev === cur) {
-      return acc;
-    } else {
-      prev = cur;
-      acc.push(cur);
-      return acc;
-    }
-  }, []);
+  return arr.filter((a, i) => {
+    if (i === 0) return true;
+    if (a === arr[i - 1]) return false;
+    return true;
+  });
 }
