@@ -5,13 +5,16 @@ function solution(sizes) {
   for (let i = 0; i < sizes.length; i++) {
     const [w, h] = sizes[i];
 
+    // 가로, 세로 둘다 작으면 통과
     if (w <= maxW && h <= maxH) {
       continue;
+      // 가로, 세로 둘다 크면, 무조건 바꾸기
     } else if (w > maxW && h > maxH) {
       maxW = w;
       maxH = h;
       continue;
     } else {
+      // 중요한건 가로의 증가량이 큰가, 세로의 증가량이 큰가를 비교하는것
       const plus_a_w = w - maxW > 0 ? w - maxW : 0;
       const plus_a_h = h - maxH > 0 ? h - maxH : 0;
       const plus_b_w = w - maxH > 0 ? w - maxH : 0;
