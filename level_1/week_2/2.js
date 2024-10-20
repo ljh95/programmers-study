@@ -1,19 +1,35 @@
 function solution(d, budget) {
+  if (sum(d) === budget) return d.length;
+  if (d.length === 1) {
+    return d[0] <= budget ? 1 : 0;
+  }
   if (d.reduce((a, c) => a + c, 0) <= budget) return d.length;
 
-  d.sort((a, b) => a - b);
-  if (d[0] > budget) return 0;
+  const arr = d.sort((a, b) => a - b);
 
-  let sumD = [];
-  d.forEach((_, i) => {
-    let arr = d.slice(0, i + 1);
-    sumD.push(arr.reduce((a, c) => a + c, 0));
-  });
+  const len = arr.length;
+  let i = Math.floor(len / 2);
+  let start = 0;
+  let end = len;
 
-  for (let i = 0; i < sumD.length; i++) {
-    if (sumD[i] === budget) return i + 1;
-    else if (sumD[i] > budget) {
-      return i;
+  while (true) {
+    const prevArr = arr.slice(0, i);
+    const nextArr = arr.slice(0, i + 1);
+
+    if (sum(prevArr) <= budget && budget <= sum(nextArr)) {
+      if (sum(nextArr) === budget) i++;
+      break;
+    } else if (sum(prevArr) < budget) {
+      start = i;
+      i = Math.floor((end + i) / 2);
+    } else {
+      end = i;
+      i = Math.floor((start + i) / 2);
     }
   }
+  return i;
 }
+
+const sum = (arr) => {
+  return arr.reduce((acc, cur) => acc + cur, 0);
+};
