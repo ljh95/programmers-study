@@ -16,7 +16,6 @@ function solution(n, m, section) {
   return answer;
 }
 
-console.log(solution(8, 4, [2, 3, 6]));
 /**
  * 일단 가장 속도 상관없이 그냥 없애는걸로 햇는데
  * 아마, 배열이니까 더더 성능이 안좋았을거 같다.
@@ -27,5 +26,5 @@ console.log(solution(8, 4, [2, 3, 6]));
 
 /**
  * 배열을 한번만 쓸 수 있도록 해야함
- * 
+ *
  */
