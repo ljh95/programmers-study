@@ -15,8 +15,6 @@ function solution(k, score) {
 
     list.push(element);
     list.sort((a, b) => a - b);
-    console.log(list);
-
     list.shift();
 
     answer.push(list[0]);
