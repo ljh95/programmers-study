@@ -39,5 +39,3 @@ function solution(s) {
   }
   return answer * 1;
 }
-
-// prev
