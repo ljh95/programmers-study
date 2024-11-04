@@ -1,5 +1,3 @@
-const reg = /[a-z]|[A-Z]/;
-
 function solution(s) {
     return s.split(' ').map(v => {
         if(v === '') return v;
