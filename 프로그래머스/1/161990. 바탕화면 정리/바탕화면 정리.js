@@ -21,7 +21,3 @@ function solution(wallpaper) {
   }
   return answer;
 }
-/**
- * 생각보다 간단
- * 간단한 구현
- */
