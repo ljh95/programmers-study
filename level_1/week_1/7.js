@@ -13,7 +13,6 @@ function solution(n) {
       arr.push(i);
     }
   }
-  console.log(n);
 
   return (
     arr.reduce((acc, cur) => {
